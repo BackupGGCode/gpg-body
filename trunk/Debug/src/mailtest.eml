@@ -1,0 +1,167 @@
+X-Mozilla-Status: 0001
+X-Mozilla-Status2: 00000000
+Return-Path: <noreply-3f915303@plus.google.com>
+X-Original-To: uriel@localhost
+Delivered-To: uriel@localhost
+Received: from invernomouth (localhost [127.0.0.1])
+	by invernomouth (Postfix) with ESMTP id C4A9E181C47CC
+	for <uriel@localhost>; Sun, 19 May 2013 22:54:12 +0200 (CEST)
+Delivered-To: uriel.fanelli@gmail.com
+Received: from gmail-pop.l.google.com [173.194.70.109]
+	by invernomouth with IMAP (fetchmail-6.3.21)
+	for <uriel@localhost> (single-drop); Sun, 19 May 2013 22:54:12 +0200 (CEST)
+Received: by 10.68.249.66 with SMTP id ys2csp52338pbc; Sun, 19 May 2013
+ 10:50:23 -0700 (PDT)
+X-Received: by 10.15.111.75 with SMTP id ci51mr22575338eeb.7.1368985822242;
+ Sun, 19 May 2013 10:50:22 -0700 (PDT)
+Received: from mail-fa0-x245.google.com (mail-fa0-x245.google.com
+ [2a00:1450:4001:c02::245]) by mx.google.com with ESMTPS id
+ v8si10400613eeg.27.2013.05.19.10.50.21 for <uriel.fanelli@gmail.com>
+ (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128); Sun, 19 May 2013
+ 10:50:22 -0700 (PDT)
+Received-SPF: pass (google.com: domain of noreply-3f915303@plus.google.com
+ designates 2a00:1450:4001:c02::245 as permitted sender)
+ client-ip=2a00:1450:4001:c02::245;
+Authentication-Results: mx.google.com; spf=pass (google.com: domain of
+ noreply-3f915303@plus.google.com designates 2a00:1450:4001:c02::245 as
+ permitted sender) smtp.mail=noreply-3f915303@plus.google.com; dkim=pass
+ header.i=@plus.google.com; dmarc=pass (p=REJECT dis=none) d=plus.google.com
+Received: by mail-fa0-x245.google.com with SMTP id a11so5251189fad.4 for
+ <uriel.fanelli@gmail.com>; Sun, 19 May 2013 10:50:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=plus.google.com;
+ s=20120806; h=mime-version:x-received:x-notifications:x-notification-id
+ :x-sender-id:x-notification-category:x-notification-type:reply-to
+ :x-ub:precedence:date:message-id:subject:from:to:content-type;
+ bh=hg4IrgZOf9O7H3wJy5g3VatKg8Xf3qOQ8fxDBLlGSRU=;
+ b=WAaPa/do8PP01WhcUp+YYT1wyjB6R324LO8LEiwl6HmVGlcVzChq/gIiV+na3fR5jN
+ IINJZ1lRpvypyB761b8UtS/6oTxguIzXSohfvRVSTsH8Jh2F3aVbJ84vC3bgG3p1i5/R
+ n0HTz/R8QjqaFvJGP/G55TYHSca4PHiCPRGoVuc5jp8olkzEL1W5KEL0uOMUXH5QFLww
+ BX/PII99DXF/b2IHWQ9yyGr+PfMXh22ByzSiich2DWcG+nAAxKjglyFK396+WhoDLu1f
+ h3Lux9rNZ/skPDq+jVwHmzO13jxdFCqnNEX5ydr6ugUNPCeqU8b8wz1EyJIVBUwqlOJp Ilwg==
+MIME-Version: 1.0
+X-Received: by 10.15.110.131 with SMTP id ch3mr65855987eeb.5.1368985821502;
+ Sun, 19 May 2013 10:50:21 -0700 (PDT)
+X-Notifications: XEAAAANKO-M19I8ZD_avah2fDBpM
+X-Notification-ID: z12bgpjyesrghrwle22fdlyall3khd4ub
+X-Sender-ID: 110212640511143808084
+X-Notification-Category: CIRCLE
+X-Notification-Type: CIRCLE_PERSONAL_ADD
+Reply-To: "Google+" <noreply-3f915303@plus.google.com>
+X-UB: 1
+Precedence: bulk
+Date: Sun, 19 May 2013 10:50:21 -0700 (PDT)
+Message-ID: <z12bgpjyesrghrwle22fdlyall3khd4ub@plus.google.com>
+Subject: gabriele ciuffardi added you on Google+
+From: "Google+" <noreply-3f915303@plus.google.com>
+To: uriel.fanelli@gmail.com
+Content-Type: multipart/alternative; boundary=089e0160c77097deac04dd15d934
+
+--089e0160c77097deac04dd15d934
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed; delsp=yes
+
+Follow and share with gabriele by adding him to a circle.
+
+Don't know some of these people? You don't have to add them back (they'll  
+just see the stuff you share publicly). Learn more:  
+http://www.google.com/support/+/bin/answer.py?answer=1047805
+
+Add to circles:  
+https://plus.google.com/_/notifications/emlink?emr=02598639409865329687&emid=CODI08zdorcCFQKa3godPWsAAA&path=%2F110212640511143808084&dt=1368985821500&ub=1
+
+------------------------
+Change what email Google+ sends you:  
+https://plus.google.com/_/notifications/emlink?emr=02598639409865329687&emid=CODI08zdorcCFQKa3godPWsAAA&path=%2Fsettings%2Fplus&dt=1368985821500&ub=1
+View gabriele's profile:  
+https://plus.google.com/_/notifications/emlink?emr=02598639409865329687&emid=CODI08zdorcCFQKa3godPWsAAA&path=%2F110212640511143808084&dt=1368985821500&ub=1
+Block gabriele completely:  
+https://plus.google.com/_/notifications/emlink?emr=02598639409865329687&emid=CODI08zdorcCFQKa3godPWsAAA&path=%2F110212640511143808084%2Fop%2Fblock&dt=1368985821500&ub=1
+Google Inc., 1600 Amphitheatre Pkwy, Mountain View, CA 94043 USA
+
+
+
+--089e0160c77097deac04dd15d934
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+<html><body><!-- X-Notifications: 1:9749511108000000 --><div style=3D"borde=
+r:solid 1px #dfdfdf;color:#686868;font:13px Arial"><div style=3D"background=
+-color:#fff;padding:20px;"><table cellpadding=3D0 cellspacing=3D0><tr><td s=
+tyle=3D"padding-right:15px;vertical-align:top"><a href=3D"https://plus.goog=
+le.com/_/notifications/emlink?emr=3D02598639409865329687&emid=3DCODI08zdorc=
+CFQKa3godPWsAAA&path=3D%2F110212640511143808084&dt=3D1368985821500&ub=3D1">=
+<img style=3D"border:solid 1px #cccccc;" width=3D"75" height=3D"75" src=3D"=
+https://lh5.googleusercontent.com/-uIzDq2ahq6o/AAAAAAAAAAI/AAAAAAAADs0/EXgt=
+OfHCaqU/s75-c-k-a/photo.jpg" /></a></td><td style=3D"width:578px;color:#333=
+;font:13px Arial;vertical-align:top;color:#686868;font:16px Arial">Follow a=
+nd share with <a href=3D"https://plus.google.com/_/notifications/emlink?emr=
+=3D02598639409865329687&emid=3DCODI08zdorcCFQKa3godPWsAAA&path=3D%2F1102126=
+40511143808084&dt=3D1368985821500&ub=3D1" style=3D"color:#3366CC;text-decor=
+ation:none">gabriele</a> by adding him to a circle.<div style=3D"width:578p=
+x;color:#333;font:13px Arial;vertical-align:top;padding-top:10px">Don't kno=
+w this person? You don't have to add them back (they'll just see the stuff =
+you share publicly). <a href=3D"http://www.google.com/support/+/bin/answer.=
+py?answer=3D1047805" style=3D"color:#3366CC;text-decoration:none">Learn mor=
+e</a>.</div><div style=3D"margin-top:10px"><a href=3D"https://plus.google.c=
+om/_/notifications/emlink?emr=3D02598639409865329687&emid=3DCODI08zdorcCFQK=
+a3godPWsAAA&path=3D%2F110212640511143808084&dt=3D1368985821500&ub=3D1" styl=
+e=3D"background-color:#d44b38;border:solid 1px #dfdfdf;border-radius:3px;co=
+lor:#fff;display:inline-block;font-family: Arial;font-size:13px;height:30px=
+;line-height:30px;min-width:54px;padding:1px 20px;text-align:center;text-de=
+coration:none;white-space:nowrap;"rel=3D"acb110212640511143808084">Add to c=
+ircles</a></div></td></tr></table><div style=3D"border-top:solid 1px #ddd;m=
+argin-top:20px"><div style=3D"padding-top:20px">People you might know in ga=
+briele ciuffardi's circles. <a href=3D"https://plus.google.com/_/notificati=
+ons/emlink?emr=3D02598639409865329687&emid=3DCODI08zdorcCFQKa3godPWsAAA&pat=
+h=3D%2F110212640511143808084&dt=3D1368985821500&src=3D1&ub=3D1" style=3D"co=
+lor:#3366CC;text-decoration:none">View all &raquo;</a></div><table cellpadd=
+ing=3D0 cellspacing=3D0 style=3D"font:13px Arial"><tr><td style=3D"padding-=
+top:20px;"><img style=3D"border:solid 1px #cccccc;" width=3D"60" height=3D"=
+60" src=3D"https://lh6.googleusercontent.com/-vm7mKPSkFtc/AAAAAAAAAAI/AAAAA=
+AAADKw/orqQZ3OY4d0/s75-c-k-a/photo.jpg" /></td><td style=3D"padding:20px 20=
+px 0 10px;vertical-align:top;line-height:150%;min-width:125px;max-width:130=
+px"><div style=3D"margin-bottom:8px;white-space:nowrap;"><div style=3D"over=
+flow:hidden;text-overflow:ellipsis;"><a href=3D"https://plus.google.com/_/n=
+otifications/emlink?emr=3D02598639409865329687&emid=3DCODI08zdorcCFQKa3godP=
+WsAAA&path=3D%2F102439672032251173760&dt=3D1368985821500&src=3D1&ub=3D1" st=
+yle=3D"$ij.linkStyle">Laura Pausini</a></div><div style=3D"overflow:hidden;=
+text-overflow:ellipsis;color:#666;"></div></div><a href=3D"https://plus.goo=
+gle.com/_/notifications/emlink?emr=3D02598639409865329687&emid=3DCODI08zdor=
+cCFQKa3godPWsAAA&path=3D%2F102439672032251173760&dt=3D1368985821500&src=3D1=
+&ub=3D1" rel=3D"acs102439672032251173760" style=3D"border:solid 1px #dfdfdf=
+;padding:2px 8px;color:#333; font:11px Arial;background-color:#f5f5f5;text-=
+decoration:none;">Add to circles</a></td><td style=3D"padding-top:20px;"><i=
+mg style=3D"border:solid 1px #cccccc;" width=3D"60" height=3D"60" src=3D"ht=
+tps://lh6.googleusercontent.com/-CU3a0Y-6Dxw/AAAAAAAAAAI/AAAAAAAAuUQ/M41oEc=
+N6sLo/s75-c-k-a/photo.jpg" /></td><td style=3D"padding:20px 20px 0 10px;ver=
+tical-align:top;line-height:150%;min-width:125px;max-width:130px"><div styl=
+e=3D"margin-bottom:8px;white-space:nowrap;"><div style=3D"overflow:hidden;t=
+ext-overflow:ellipsis;"><a href=3D"https://plus.google.com/_/notifications/=
+emlink?emr=3D02598639409865329687&emid=3DCODI08zdorcCFQKa3godPWsAAA&path=3D=
+%2F101336441946387245415&dt=3D1368985821500&src=3D1&ub=3D1" style=3D"$ij.li=
+nkStyle">Madonna</a></div><div style=3D"overflow:hidden;text-overflow:ellip=
+sis;color:#666;"></div></div><a href=3D"https://plus.google.com/_/notificat=
+ions/emlink?emr=3D02598639409865329687&emid=3DCODI08zdorcCFQKa3godPWsAAA&pa=
+th=3D%2F101336441946387245415&dt=3D1368985821500&src=3D1&ub=3D1" rel=3D"acs=
+101336441946387245415" style=3D"border:solid 1px #dfdfdf;padding:2px 8px;co=
+lor:#333; font:11px Arial;background-color:#f5f5f5;text-decoration:none;">A=
+dd to circles</a></td><td colspan=3D"2"></td></tr></table></div></div><div =
+style=3D"border-top:solid 1px #dfdfdf;padding:0 20px; background-color:#f5f=
+5f5"><table cellpadding=3D0 cellspacing=3D0 style=3D"height:50px"><tbody><t=
+r><td style=3D"vertical-align:middle;width:100%; color:#636363;font:11px Ar=
+ial; line-height:120%"><a href=3D"https://plus.google.com/_/notifications/e=
+mlink?emr=3D02598639409865329687&emid=3DCODI08zdorcCFQKa3godPWsAAA&path=3D%=
+2Fsettings%2Fplus&dt=3D1368985821500&ub=3D1" style=3D"color:#3366CC;text-de=
+coration:none">Change</a> what email Google+ sends you. <a href=3D"https://=
+plus.google.com/_/notifications/emlink?emr=3D02598639409865329687&emid=3DCO=
+DI08zdorcCFQKa3godPWsAAA&path=3D%2F110212640511143808084&dt=3D1368985821500=
+&ub=3D1" style=3D"color:#3366CC;text-decoration:none">View</a> gabriele's p=
+rofile or <a href=3D"https://plus.google.com/_/notifications/emlink?emr=3D0=
+2598639409865329687&emid=3DCODI08zdorcCFQKa3godPWsAAA&path=3D%2F11021264051=
+1143808084%2Fop%2Fblock&dt=3D1368985821500&ub=3D1" style=3D"color:#3366CC;t=
+ext-decoration:none">block</a> gabriele completely.<br>Google Inc., 1600 Am=
+phitheatre Pkwy, Mountain View, CA 94043 USA<br></td><td><img src=3D"https:=
+//ssl.gstatic.com/s2/oz/images/notifications/logo/google-plus-6617a72bb36cc=
+548861652780c9e6ff1.png" /></td></tr></tbody></table></div></div></body></h=
+tml>
+--089e0160c77097deac04dd15d934--
+
