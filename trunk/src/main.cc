@@ -82,7 +82,7 @@ int main( int argc , char *argv[])
 	{
 		std::cout << headers;
 		std::cout << email;
-    std::cerr << "Problem # 5" << std::endl;   
+        std::cerr << "Problem # 5" << std::endl;   
 		std::exit(5);
 	}	
 		
@@ -109,19 +109,28 @@ gpg_command.append("\n");
 
  //se la riga e' troppo lunga  
     if (gpg_command.length() > 1023) {transparent = 1;}; 
+	
  //se ci sono caratteri sospetti   
     if (gpg_command.find_first_of("|<>&()") != std::string::npos) {transparent = 2;}; 
+	
  // se  criptato da prima   
     if (email.find("-----BEGIN PGP MESSAGE-----")  != std::string::npos)  {transparent = 3;};
+	
  // problema ad aprire la pipe oppure gpg esce in malo modo   
-    if (stream == NULL) {transparent = 4;}; 
+    if (stream == NULL) {transparent = 4;};
+	
+ // nessun recipient specificato
+
+	if (gpg_command.find("-r") != std::string::npos) {transparent = 6;};
+	
+	
   
    if (transparent > 0)
     {
         // usciamo restituendo la mail originale  	
 		    std::cout << headers;
 		    std::cout << email;
-        std::cerr << "Problem # " << transparent << std::endl;  
+            std::cerr << "Problem # " << transparent << std::endl;  
 		    std::exit(transparent);
           
 	}		
