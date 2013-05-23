@@ -73,7 +73,7 @@ int main( int argc , char *argv[])
 //definiamo il comando gpg
 //criptiamo e restituiamo ASCII	
 	
-	std::string gpg_command = "gpg -ea ";
+	std::string gpg_command = "/usr/bin/gpg -ea ";
 
 // vediamo che ci sia almeno il destinatario
 // es: gpg -ea  -r uriel.fanelli@gmail.com 
