@@ -45,6 +45,9 @@ int main( int argc , char *argv[])
   std::istream_iterator<char> it(std::cin);
   std::istream_iterator<char> end;
   std::string email(it, end);
+  
+// Inizializziamo il randomizzatore congruente  
+  
   std::srand(std::time(NULL));
 
 
