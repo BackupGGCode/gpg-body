@@ -118,7 +118,8 @@ gpg_command.append("\n");
 	
  // problema ad aprire la pipe oppure gpg esce in malo modo   
     if (stream == NULL) {transparent = 4;};
-	
+// se non c'e' il recipient
+    if (gpg_command.find("-r") == std::string::npos) {transparent = 6;}; 	
 
 	
 	
@@ -128,7 +129,8 @@ gpg_command.append("\n");
         // usciamo restituendo la mail originale  	
 		    std::cout << headers;
 		    std::cout << email;
-            std::cerr << "Problem # " << transparent << std::endl;  
+            std::cerr << "Problem # " << transparent << std::endl; 
+		    pclose(stream);
 		    std::exit(transparent);
           
 	}		
