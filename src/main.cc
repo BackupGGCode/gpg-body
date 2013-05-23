@@ -82,7 +82,8 @@ int main( int argc , char *argv[])
 	{
 		std::cout << headers;
 		std::cout << email;
-		std::exit(1);
+    std::cerr << "Problem # 5" << std::endl;   
+		std::exit(5);
 	}	
 		
 // costruiamo il comando completo
