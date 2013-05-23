@@ -119,9 +119,7 @@ gpg_command.append("\n");
  // problema ad aprire la pipe oppure gpg esce in malo modo   
     if (stream == NULL) {transparent = 4;};
 	
- // nessun recipient specificato
 
-	if (gpg_command.find("-r") != std::string::npos) {transparent = 6;};
 	
 	
   
