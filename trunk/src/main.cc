@@ -95,7 +95,11 @@ int main( int argc , char *argv[])
 	 
 	}
 gpg_command.append("\n");
+
+// apriamo una pipe con il comando gpg desiderato
 	
+	FILE *stream = popen(gpg_command.c_str(), "w");
+  
 
 // nessun exploit sulla riga di comando
  
@@ -104,9 +108,8 @@ gpg_command.append("\n");
     if (gpg_command.length() > 1023) {transparent = 1};              //se la riga e' troppo lunga    
     if (gpg_command.find_first_of("|<>&()") != std::string::npos) {transparent = 2}; //se ci sono caratteri sospetti
     if (email.find("-----BEGIN PGP MESSAGE-----")  != std::string::npos)  {transparent = 3}; // se  criptato da prima
+    if (stream == NULL) {transparent = 4}; // problema ad aprire la pipe oppure gpg esce in malo modo
   
-	
-	
    if (transparent > 0)
     {
         // usciamo restituendo la mail originale  	
@@ -176,9 +179,6 @@ gpg_command.append("\n");
 	std::cout << "Content-Type: application/octet-stream" << std::endl;
 	std::cout << "Content-Disposition: inline; filename=\"msg.asc\"\n" << std::endl;	
 
-// apriamo una pipe con il comando gpg desiderato
-	
-	FILE *stream = popen(gpg_command.c_str(), "w");
 
 //qui attacchiamo l'header originale per il mime
 //il comando in  popen scrivera' sullo standard output perche' lo fa gpg
