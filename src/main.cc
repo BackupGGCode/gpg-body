@@ -105,10 +105,15 @@ gpg_command.append("\n");
  
   int transparent = 0;
 
-    if (gpg_command.length() > 1023) {transparent = 1};              //se la riga e' troppo lunga    
-    if (gpg_command.find_first_of("|<>&()") != std::string::npos) {transparent = 2}; //se ci sono caratteri sospetti
-    if (email.find("-----BEGIN PGP MESSAGE-----")  != std::string::npos)  {transparent = 3}; // se  criptato da prima
-    if (stream == NULL) {transparent = 4}; // problema ad aprire la pipe oppure gpg esce in malo modo
+
+ //se la riga e' troppo lunga  
+    if (gpg_command.length() > 1023) {transparent = 1}; 
+ //se ci sono caratteri sospetti   
+    if (gpg_command.find_first_of("|<>&()") != std::string::npos) {transparent = 2}; 
+ // se  criptato da prima   
+    if (email.find("-----BEGIN PGP MESSAGE-----")  != std::string::npos)  {transparent = 3};
+ // problema ad aprire la pipe oppure gpg esce in malo modo   
+    if (stream == NULL) {transparent = 4}; 
   
    if (transparent > 0)
     {
