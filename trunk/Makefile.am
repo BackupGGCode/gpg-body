@@ -4,13 +4,6 @@
 SUBDIRS = src po
 
 gpg_bodydocdir = ${prefix}/doc/gpg_body
-gpg_bodydoc_DATA = \
-	README\
-	COPYING\
-	AUTHORS\
-	ChangeLog\
-	INSTALL\
-	NEWS
 
 
 INTLTOOL_FILES = intltool-extract.in \
@@ -19,6 +12,9 @@ INTLTOOL_FILES = intltool-extract.in \
 
 EXTRA_DIST = $(gpg_bodydoc_DATA) \
 	$(INTLTOOL_FILES)
+
+data_DATA = MANUAL.odt \
+	MANUAL.pdf
 
 DISTCLEANFILES = intltool-extract \
 	intltool-merge \
