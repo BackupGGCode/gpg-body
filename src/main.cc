@@ -120,7 +120,9 @@ gpg_command.append("\n");
         // usciamo restituendo la mail originale  	
 		    std::cout << headers;
 		    std::cout << email;
-		    std::exit(1);
+        std::cerr << "Problem # " << transparent << std::endl;  
+		    std::exit(transparent);
+          
 	}		
    
    
