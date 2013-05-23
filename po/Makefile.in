@@ -19,7 +19,7 @@
 
 GETTEXT_PACKAGE = gpg_body
 PACKAGE = gpg_body
-VERSION = 0.1
+VERSION = 1.0
 
 SHELL = /bin/bash
 
