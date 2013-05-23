@@ -106,6 +106,16 @@ gpg_command.append("\n");
 		std::cout << email;
 		std::exit(1);
 	}		
+   
+//nessun token pericoloso per la shell 
+ 
+   if (gpg_command.find_first_of("|<>&()") != std::string::npos)
+   {
+        //se ci sono caratteri sospetti usciamo restituendo la mail originale  	
+		std::cout << headers;
+		std::cout << email;
+		std::exit(1);
+	}		
 	
 	
 
