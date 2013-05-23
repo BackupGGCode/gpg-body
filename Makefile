@@ -92,8 +92,8 @@ am__uninstall_files_from_dir = { \
     || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
          $(am__cd) "$$dir" && rm -f $$files; }; \
   }
-am__installdirs = "$(DESTDIR)$(gpg_bodydocdir)"
-DATA = $(gpg_bodydoc_DATA)
+am__installdirs = "$(DESTDIR)$(datadir)"
+DATA = $(data_DATA)
 RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
   distclean-recursive maintainer-clean-recursive
 AM_RECURSIVE_TARGETS = $(RECURSIVE_TARGETS:-recursive=) \
@@ -292,20 +292,15 @@ top_builddir = .
 top_srcdir = .
 SUBDIRS = src po
 gpg_bodydocdir = ${prefix}/doc/gpg_body
-gpg_bodydoc_DATA = \
-	README\
-	COPYING\
-	AUTHORS\
-	ChangeLog\
-	INSTALL\
-	NEWS
-
 INTLTOOL_FILES = intltool-extract.in \
 	intltool-merge.in \
 	intltool-update.in
 
 EXTRA_DIST = $(gpg_bodydoc_DATA) \
 	$(INTLTOOL_FILES)
+
+data_DATA = MANUAL.odt \
+	MANUAL.pdf
 
 DISTCLEANFILES = intltool-extract \
 	intltool-merge \
@@ -374,24 +369,24 @@ clean-libtool:
 
 distclean-libtool:
 	-rm -f libtool config.lt
-install-gpg_bodydocDATA: $(gpg_bodydoc_DATA)
+install-dataDATA: $(data_DATA)
 	@$(NORMAL_INSTALL)
-	test -z "$(gpg_bodydocdir)" || $(MKDIR_P) "$(DESTDIR)$(gpg_bodydocdir)"
-	@list='$(gpg_bodydoc_DATA)'; test -n "$(gpg_bodydocdir)" || list=; \
+	test -z "$(datadir)" || $(MKDIR_P) "$(DESTDIR)$(datadir)"
+	@list='$(data_DATA)'; test -n "$(datadir)" || list=; \
 	for p in $$list; do \
 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
 	  echo "$$d$$p"; \
 	done | $(am__base_list) | \
 	while read files; do \
-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(gpg_bodydocdir)'"; \
-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(gpg_bodydocdir)" || exit $$?; \
+	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(datadir)'"; \
+	  $(INSTALL_DATA) $$files "$(DESTDIR)$(datadir)" || exit $$?; \
 	done
 
-uninstall-gpg_bodydocDATA:
+uninstall-dataDATA:
 	@$(NORMAL_UNINSTALL)
-	@list='$(gpg_bodydoc_DATA)'; test -n "$(gpg_bodydocdir)" || list=; \
+	@list='$(data_DATA)'; test -n "$(datadir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	dir='$(DESTDIR)$(gpg_bodydocdir)'; $(am__uninstall_files_from_dir)
+	dir='$(DESTDIR)$(datadir)'; $(am__uninstall_files_from_dir)
 
 # This directory's subdirectories are mostly independent; you can cd
 # into them and run `make' without going through this Makefile.
@@ -723,7 +718,7 @@ check: check-recursive
 all-am: Makefile $(DATA) config.h
 installdirs: installdirs-recursive
 installdirs-am:
-	for dir in "$(DESTDIR)$(gpg_bodydocdir)"; do \
+	for dir in "$(DESTDIR)$(datadir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: install-recursive
@@ -779,7 +774,7 @@ info: info-recursive
 
 info-am:
 
-install-data-am: install-gpg_bodydocDATA
+install-data-am: install-dataDATA
 
 install-dvi: install-dvi-recursive
 
@@ -825,7 +820,7 @@ ps: ps-recursive
 
 ps-am:
 
-uninstall-am: uninstall-gpg_bodydocDATA uninstall-local
+uninstall-am: uninstall-dataDATA uninstall-local
 
 .MAKE: $(RECURSIVE_CLEAN_TARGETS) $(RECURSIVE_TARGETS) all \
 	ctags-recursive install-am install-strip tags-recursive
@@ -837,16 +832,15 @@ uninstall-am: uninstall-gpg_bodydocDATA uninstall-local
 	dist-zip distcheck distclean distclean-generic distclean-hdr \
 	distclean-libtool distclean-tags distcleancheck distdir \
 	distuninstallcheck dvi dvi-am html html-am info info-am \
-	install install-am install-data install-data-am install-dvi \
-	install-dvi-am install-exec install-exec-am \
-	install-gpg_bodydocDATA install-html install-html-am \
-	install-info install-info-am install-man install-pdf \
-	install-pdf-am install-ps install-ps-am install-strip \
-	installcheck installcheck-am installdirs installdirs-am \
-	maintainer-clean maintainer-clean-generic mostlyclean \
-	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
-	tags tags-recursive uninstall uninstall-am \
-	uninstall-gpg_bodydocDATA uninstall-local
+	install install-am install-data install-data-am \
+	install-dataDATA install-dvi install-dvi-am install-exec \
+	install-exec-am install-html install-html-am install-info \
+	install-info-am install-man install-pdf install-pdf-am \
+	install-ps install-ps-am install-strip installcheck \
+	installcheck-am installdirs installdirs-am maintainer-clean \
+	maintainer-clean-generic mostlyclean mostlyclean-generic \
+	mostlyclean-libtool pdf pdf-am ps ps-am tags tags-recursive \
+	uninstall uninstall-am uninstall-dataDATA uninstall-local
 
 
 # Remove doc directory on uninstall
