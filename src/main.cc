@@ -98,26 +98,25 @@ gpg_command.append("\n");
 	
 
 // nessun exploit sulla riga di comando
+ 
+  int transparent = 0;
+
+    if (gpg_command.length() > 1023) {transparent = 1};              //se la riga e' troppo lunga    
+    if (gpg_command.find_first_of("|<>&()") != std::string::npos) {transparent = 2}; //se ci sono caratteri sospetti
+    if (email.find("-----BEGIN PGP MESSAGE-----")  != std::string::npos)  {transparent = 3}; // se  criptato da prima
+  
 	
-    if (gpg_command.length() > 1023)
-	{
-        //se la riga e' troppo lunga restituiamo l'input intatto ed usciamo		
-		std::cout << headers;
-		std::cout << email;
-		std::exit(1);
+	
+   if (transparent > 0)
+    {
+        // usciamo restituendo la mail originale  	
+		    std::cout << headers;
+		    std::cout << email;
+		    std::exit(1);
 	}		
    
-//nessun token pericoloso per la shell 
- 
-   if (gpg_command.find_first_of("|<>&()") != std::string::npos)
-   {
-        //se ci sono caratteri sospetti usciamo restituendo la mail originale  	
-		std::cout << headers;
-		std::cout << email;
-		std::exit(1);
-	}		
-	
-	
+   
+   
 
 //  Iniziamo con le stringhe che ci servono per il content encoding
 
