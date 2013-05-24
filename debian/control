@@ -1,5 +1,5 @@
 Source: gpg-body
-Section: system
+Section: unknown 
 Priority: extra
 Maintainer: Uriel Fanelli <uriel.fanelli@gmail.com>
 Build-Depends: debhelper , autotools-dev
