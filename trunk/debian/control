@@ -2,7 +2,7 @@ Source: gpg-body
 Section: system
 Priority: extra
 Maintainer: Uriel Fanelli <uriel.fanelli@gmail.com>
-Build-Depends: debhelper (>= 8.0.0), autotools-dev
+Build-Depends: debhelper , autotools-dev
 Standards-Version: 3.9.2
 Homepage: <insert the upstream URL, if relevant>
 #Vcs-Git: git://git.debian.org/collab-maint/gpg-body.git
