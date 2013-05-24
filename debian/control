@@ -12,12 +12,4 @@ Package: gpg-body
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Inline automatic GPG mail encryption for Linux Servers 
-GPG-Body can do on servers the same job Enigmail is doing on the client side.It can encrypt all your email before they reach the mailbox.
 
-The result for the client is the same as the real sender had encrypted the email. This is supposed to protect mailboxes againist unauthorized access, like server administrators, and whoever can obtain your credentials anyhow.
-
-It is written in C++ and tested with postfix and Enigmail on thunderbird.
-
-For instructions about how to install, look at:
-
-http://www.keinpfusch.net/p/pgp-body-enigmail-for-servers.html
