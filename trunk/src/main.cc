@@ -242,7 +242,7 @@ int main( int argc , char *argv[])
 
 // rimuoviamo il file
 
-	remove (temp_gpgfile.c_str());
+	remove(temp_gpgfile.c_str());
 	
 	
 // chiudiamo il mime	
