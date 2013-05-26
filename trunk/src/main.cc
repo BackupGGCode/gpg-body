@@ -97,9 +97,7 @@ int main( int argc , char *argv[])
 	}
 gpg_command.append("\n");
 
-// apriamo una pipe con il comando gpg desiderato
-	
-	FILE *stream = popen(gpg_command.c_str(), "w");
+
   
 
 // nessun exploit sulla riga di comando
@@ -116,36 +114,24 @@ gpg_command.append("\n");
  // se  criptato da prima   
     if (email.find("-----BEGIN PGP MESSAGE-----")  != std::string::npos)  {transparent = 3;};
 	
- // problema ad aprire la pipe oppure gpg esce in malo modo   
-    if (stream == NULL) {transparent = 4;};
+
 // se non c'e' il recipient
     if (gpg_command.find("-r") == std::string::npos) {transparent = 6;}; 	
 
 	
-	
-  
-   if (transparent > 0)
-    {
-        // usciamo restituendo la mail originale  	
-		    std::cout << headers;
-		    std::cout << email;
-            std::cerr << "Problem # " << transparent << std::endl; 
-		    pclose(stream);
-		    std::exit(transparent);
-          
-	}		
+
    
    
    
 
 //  Iniziamo con le stringhe che ci servono per il content encoding
 
-     char pwd[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHILMNOPQRSTUVZ";
-	 char smime_uuid[16];
+     char pwd[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHILMNOPQRSTUVZ01234567890";
+	 std::string  smime_uuid;
 
 	 for(int i=0; i<16; i++) 
 	    {
-	        smime_uuid[i] = pwd[std::rand() % 47];
+	        smime_uuid.push_back(pwd[std::rand() % 57]);
 	    }
 
 // Prendiamo l'header gia' presente nell' header originale
@@ -171,7 +157,7 @@ gpg_command.append("\n");
 			 headers.erase(nFPos,secondNL);		 
 			}	
 			
-     }
+ 			}
 	
 	header_orig.append("\n\n");
 	
@@ -183,11 +169,35 @@ gpg_command.append("\n");
 	smime_pgp_header.append("Content-Type: multipart/encrypted; protocol=\"application/pgp-encrypted\";boundary=\"");
 	smime_pgp_header.append(smime_uuid);
 	smime_pgp_header.append("\"\n");
-    headers.append(smime_pgp_header);
+
+
+
+// apriamo una pipe con il comando gpg desiderato
+	
+	FILE *stream = popen(gpg_command.c_str(), "w");	
+
+// problema ad aprire la pipe oppure gpg esce in malo modo   
+    if (stream == NULL) {transparent = 4;};	
+    
+
+// vediamo se tutto e' a posto o se dobbiamo chiudere tutto
+	
+  
+   if (transparent > 0)
+    {
+        // usciamo restituendo la mail originale  	
+		    std::cout << headers;
+		    std::cout << email;
+            std::cerr << "Problem # " << transparent << std::endl; 
+		    pclose(stream);
+		    std::exit(transparent);
+          
+	}		
+	
 
 	
-// Scriviamo la body enclosure	
-
+// Scriviamo gli headers e la body enclosure	
+    headers.append(smime_pgp_header);
 	std::cout << headers  << std::endl;
     std::cout << "--" << smime_uuid << std::endl;
 	std::cout << "Content-Type: application/pgp-encrypted"  << std::endl;
