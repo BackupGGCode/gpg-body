@@ -95,7 +95,7 @@ int main( int argc , char *argv[])
 		gpg_command.append(" ");
 	 
 	}
-gpg_command.append("\n");
+
 
 
   
@@ -170,7 +170,15 @@ gpg_command.append("\n");
 	smime_pgp_header.append(smime_uuid);
 	smime_pgp_header.append("\"\n");
 
+// creiamo un file temporaneo dove piazzeremo il messaggio codificato.
+// decidiamo qui il nome
 
+	std::string temp_gpgfile = "/tmp/";
+	temp_gpgfile.append(smime_uuid);	
+
+    gpg_command.append(" > ");
+	gpg_command.append(temp_gpgfile);
+	
 
 // apriamo una pipe con il comando gpg desiderato
 	
@@ -207,6 +215,8 @@ gpg_command.append("\n");
 	std::cout << "Content-Disposition: inline; filename=\"msg.asc\"\n" << std::endl;	
 
 
+
+	
 //qui attacchiamo l'header originale per il mime
 //il comando in  popen scrivera' sullo standard output perche' lo fa gpg
 	
@@ -219,6 +229,21 @@ gpg_command.append("\n");
 // fatto, adesso chiudiamo il pipe	
 
 	pclose(stream);
+
+// apriamo il file codificato
+
+  std::ifstream tmpfile(temp_gpgfile.c_str());
+  std::string gpgemail((std::istreambuf_iterator<char>(tmpfile)),
+                        std::istreambuf_iterator<char>());
+	
+// stampiamo il body criptato
+
+   std::cout << gpgemail ;	
+
+// rimuoviamo il file
+
+	remove (temp_gpgfile.c_str());
+	
 	
 // chiudiamo il mime	
 	
