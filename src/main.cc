@@ -176,7 +176,7 @@ int main( int argc , char *argv[])
 	std::string temp_gpgfile = "/tmp/";
 	temp_gpgfile.append(smime_uuid);	
 
-    gpg_command.append(" --output ");
+    gpg_command.append(" -o ");
 	gpg_command.append(temp_gpgfile);
 	
 
