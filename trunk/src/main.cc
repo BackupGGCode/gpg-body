@@ -218,7 +218,7 @@ int main( int argc , char *argv[])
 
 	
 //qui attacchiamo l'header originale per il mime
-//il comando in  popen scrivera' sullo standard output perche' lo fa gpg
+
 	
 	fputs(header_orig.c_str(),stream);
 
@@ -230,7 +230,7 @@ int main( int argc , char *argv[])
 
 	pclose(stream);
 
-// apriamo il file codificato
+// apriamo il file codificato e mettiamolo in una stringa
 
   std::ifstream tmpfile(temp_gpgfile.c_str());
   std::string gpgemail((std::istreambuf_iterator<char>(tmpfile)),
