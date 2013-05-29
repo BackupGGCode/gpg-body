@@ -140,25 +140,36 @@ int main( int argc , char *argv[])
 
    std::string header_orig;
 
-   std::string strarr[] = {"Content-Type: ", "Content-disposition: ", "Content-transfer-encoding: "};
-   size_t nFPos;
-   size_t secondNL;
-   
+   std::string strarr[] = {"Content-Type:", "Content-disposition:", "Content-transfer-encoding:"} ;
+   headers.append("\n");
+   std::istringstream headerstream(headers);
+   std::string parser,headers_new;
+   int found;
 
-	for(int i = 0; i < 3; ++i) 
-	{
-
-	nFPos =    headers.find(strarr[i]);
-    secondNL = headers.find('\n', nFPos); 
-	
-	if (nFPos != std::string::npos)
-	        {
-			 header_orig = headers.substr(nFPos,secondNL);
-			 headers.erase(nFPos,secondNL);		 
-			}	
+   	while (std::getline(headerstream, parser))
+	{   found=0;
+		for(int i = 0; i < 3; ++i)
+		{
+			if (parser.find(strarr[i]) != std::string::npos)
+			{ 
+			 // quando ha trovato l'header	
+			 header_orig.append(parser);
+			 header_orig.append("\n");
+			 found = 1;	
+			} 
+		}	
 			
- 			}
+		if (found == 0)
+		{
+				headers_new.append(parser);
+				headers_new.append("\n");
+		}	
+				
+			
+	}
+
 	
+	headers.swap(headers_new);
 	header_orig.append("\n\n");
 	
 
@@ -173,11 +184,13 @@ int main( int argc , char *argv[])
 // creiamo un file temporaneo dove piazzeremo il messaggio codificato.
 // decidiamo qui il nome
 
-	std::string temp_gpgfile = "/tmp/";
-	temp_gpgfile.append(smime_uuid);	
+	
 
-    gpg_command.append(" -o ");
-	gpg_command.append(temp_gpgfile);
+    gpg_command.append(" -o /tmp/");
+	gpg_command.append(smime_uuid);
+
+	std::string temp_gpgfile ="/tmp/";
+	temp_gpgfile.append(smime_uuid);
 	
 
 // apriamo una pipe con il comando gpg desiderato
@@ -254,5 +267,5 @@ int main( int argc , char *argv[])
 	std::exit(0);
 	
 //arrivederci e grazie	
-	
+
 }
