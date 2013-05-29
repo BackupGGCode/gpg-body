@@ -116,7 +116,13 @@ int main( int argc , char *argv[])
 	
 
 // se non c'e' il recipient
-    if (gpg_command.find("-r") == std::string::npos) {transparent = 6;}; 	
+    if (gpg_command.find("-r") == std::string::npos) 
+	{       transparent = 6;
+		    std::cout << headers;
+		    std::cout << email;
+            std::cerr << "Problem # " << transparent << std::endl; 		   
+		    std::exit(transparent);
+	}; 	
 
 	
 
