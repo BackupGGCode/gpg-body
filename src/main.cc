@@ -146,7 +146,7 @@ int main( int argc , char *argv[])
 
    std::string header_orig;
 
-   std::string strarr[] = {"Content-Type:", "Content-disposition:", "Content-transfer-encoding:"} ;
+   std::string strarr[] = {"Content-Type:", "Content-disposition:", "Content-transfer-encoding:","boundary="} ;
    headers.append("\n");
    std::istringstream headerstream(headers);
    std::string parser,headers_new;
@@ -154,7 +154,7 @@ int main( int argc , char *argv[])
 
    	while (std::getline(headerstream, parser))
 	{   found=0;
-		for(int i = 0; i < 3; ++i)
+		for(int i = 0; i < 4; ++i)
 		{
 			if (parser.find(strarr[i]) != std::string::npos)
 			{ 
