@@ -29,6 +29,7 @@
 #include <cstdlib>
 #include <cmath>
 #include <functional>
+#include <algorithm>
 
 // Tutti i commenti sono in italiano
 // spiacente per i barbari
@@ -65,7 +66,7 @@ int main( int argc , char *argv[])
 		{
 		// dividiamo header e body	
 		headers =  email.substr(0, confine);
-		email =  email.substr(confine + 1);	
+		email =    email.substr(confine +1);	
 		}	
 	}
 		
@@ -118,13 +119,18 @@ int main( int argc , char *argv[])
 // se non c'e' il recipient
     if (gpg_command.find("-r") == std::string::npos) 
 	{       transparent = 6;
-		    std::cout << headers;
-		    std::cout << email;
-            std::cerr << "Problem # " << transparent << std::endl; 		   
-		    std::exit(transparent);
 	}; 	
 
-	
+	 if (transparent > 0)
+    {
+        // usciamo restituendo la mail originale  	
+		    std::cout << headers;
+		    std::cout << email;
+            std::cerr << "Problem # " << transparent << std::endl; 
+		   
+		    std::exit(transparent);
+          
+	}		
 
    
    
@@ -146,21 +152,26 @@ int main( int argc , char *argv[])
 
    std::string header_orig;
 
-   std::string strarr[] = {"Content-Type:", "Content-disposition:", "Content-transfer-encoding:","boundary="} ;
+   std::string strarr[] = {"Content-Type: ", "Content-disposition: ", "Content-transfer-encoding: ","boundary="} ;
+// ma per RFC822 gli headers non sono case sensitive	
    headers.append("\n");
    std::istringstream headerstream(headers);
-   std::string parser,headers_new;
+   std::string parser,parser_up,headers_new,strarr_up;
    int found;
 
    	while (std::getline(headerstream, parser))
 	{   found=0;
+		parser_up=parser;
+        std::transform(parser_up.begin(), parser_up.end(),parser_up.begin(), ::toupper);
+        
+		
 		for(int i = 0; i < 4; ++i)
 		{
-			if (parser.find(strarr[i]) != std::string::npos)
+		strarr_up=strarr[i];	
+		std::transform(strarr_up.begin(), strarr_up.end(),strarr_up.begin(), ::toupper);	
+			if (parser_up.find(strarr_up) != std::string::npos)
 			{ 
-			 // quando ha trovato l'header	
-			 header_orig.append(parser);
-			 header_orig.append("\n");
+			
 			 found = 1;	
 			} 
 		}	
@@ -169,11 +180,16 @@ int main( int argc , char *argv[])
 		{
 				headers_new.append(parser);
 				headers_new.append("\n");
+		}
+		else 
+		{	
+          // quando ha trovato l'header	
+			 header_orig.append(parser);
+			 header_orig.append("\n");
 		}	
-				
-			
 	}
 
+	
 	
 	headers.swap(headers_new);
 	header_orig.append("\n\n");
